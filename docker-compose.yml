@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  jenkins:
+    build: ./jenkins
+    volumes:
+      - ${DATA_SAVE_PATH}/jenkins:/var/lib/jenkins
+    ports:
+      - "${JENKINS_PORT}:8080"
+    networks:
+      - backend
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      
+networks:
+  backend:
+    driver: "bridge"
