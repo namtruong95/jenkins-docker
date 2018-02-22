@@ -6,6 +6,7 @@ services:
     volumes:
       - ${DATA_SAVE_PATH}/jenkins:/var/lib/jenkins
       - /var/run/docker.sock:/var/run/docker.sock
+      - /home/namtt/.ssh:/var/jenkins_home/.ssh
     ports:
       - "${JENKINS_PORT}:8080"
     networks:
