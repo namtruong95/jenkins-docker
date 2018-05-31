@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:latest
 
 LABEL MAINTAINER="Thanh Nam <nam.tt@neo-lab.vn>"
 

@@ -4,7 +4,7 @@ services:
   jenkins:
     build: ./jenkins
     volumes:
-      - ${DATA_SAVE_PATH}/jenkins:/var/lib/jenkins
+      - ./jenkins/lib/jenkins:/var/lib/jenkins
       - /var/run/docker.sock:/var/run/docker.sock
       - $HOME/.ssh:/var/jenkins_home/.ssh
     ports:
