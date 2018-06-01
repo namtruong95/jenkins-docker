@@ -6,7 +6,7 @@ services:
     volumes:
       - ./jenkins/lib/jenkins:/var/lib/jenkins
       - /var/run/docker.sock:/var/run/docker.sock
-      - $HOME/.ssh:/var/jenkins_home/.ssh
+      - $HOME/.ssh:~/.ssh
     ports:
       - "${JENKINS_PORT}:8080"
     networks:
