@@ -17,11 +17,11 @@ RUN apk update \
     && apk add --no-cache bash \
     && adduser -D -H -u 1000 -s /bin/bash www-data
 
-# RUN mkdir -p /var/www/sod; \
-#     chown -R www-data:www-data /var/www/sod
-
-# VOLUME [ "/var/www/sod" ]
+RUN mkdir -p /var/www/sod; \
+    chown -R www-data:www-data /var/www/sod
 
 CMD ["nginx"]
 
 EXPOSE 80 443
+
+VOLUME [ "/var/www/sod" ]

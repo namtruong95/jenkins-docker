@@ -1,42 +1,32 @@
-version: '2'
+version: '3'
 
 services:
 
-  application:
-    image: tianon/true
-    volumes:
-      - /tmp/sod-demo:/var/www:cached
-
-  ### JENKINS Server Container ##################################
+  ### JENKINS Server Container ###
 
   jenkins:
     build: ./jenkins
-    volumes_from:
-      - application
     volumes:
       - ./jenkins/lib/jenkins:/var/lib/jenkins
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./nginx/www:/var/www:cached
     ports:
       - "${JENKINS_PORT}:8080"
     networks:
       - backend
 
-  ### NGINX Server Container ##################################
+  ### NGINX Server Container ####
+
   nginx:
-    build:
-      context: ./nginx
-    volumes_from:
-      - application
+    build: ./nginx
     volumes:
       - ./nginx/logs/:/var/log/nginx
       - ./nginx/sites:/etc/nginx/sites-available
       - ./nginx/h5bp:/etc/nginx/h5bp
-    extra_hosts:
-      - "dockerhost:10.0.75.1"
+      - ./nginx/www:/var/www
     ports:
       - "${NGINX_HOST_HTTP_PORT}:80"
       - "${NGINX_HOST_HTTPS_PORT}:443"
-      - "2222:22"
     networks:
       - backend
 
