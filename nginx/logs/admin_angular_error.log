@@ -1,0 +1,2 @@
+2018/08/03 03:14:53 [error] 8#8: *1 directory index of "/var/www/sod-store-frontend/dist/admin/" is forbidden, client: 172.20.0.1, server: admin.sod.test, request: "GET / HTTP/1.1", host: "localhost"
+2018/08/03 03:24:10 [error] 8#8: *4 directory index of "/var/www/sod-store-frontend/dist/admin/" is forbidden, client: 172.20.0.1, server: admin.sod.test, request: "GET / HTTP/1.1", host: "localhost"
