@@ -1,0 +1,4 @@
+2018/08/03 04:54:59 [notice] 42#42: signal process started
+2018/08/03 05:43:51 [emerg] 1#1: getpwnam("www-data") failed in /etc/nginx/nginx.conf:1
+2018/08/03 05:44:32 [emerg] 1#1: getpwnam("www-data") failed in /etc/nginx/nginx.conf:1
+2018/08/03 06:58:26 [notice] 47#47: signal process started
